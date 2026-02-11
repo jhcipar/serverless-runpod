@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     liblapack-dev \
     && rm -rf /var/lib/apt/lists/*
 
+
 # Instalar pacotes
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir numpy==1.24.3 && \
