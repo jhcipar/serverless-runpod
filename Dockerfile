@@ -21,6 +21,9 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir requests==2.31.0 && \
     pip install --no-cache-dir runpod==1.7.2
 
+ARG CACHE_BUSTER=1
+RUN echo "cache_buster=${CACHE_BUSTER}" > /cache-buster.txt
+
 COPY handler.py /
 
 CMD ["python3", "-u", "handler.py"]
